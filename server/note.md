@@ -36,9 +36,8 @@
 
 * 基本設定
 
-
 	```
-NameVirtualHost *:80
+NameVirtualHost *:80  
 
 <VirtualHost *:80>
     ServerAdmin comdan66@gmail.com
@@ -54,8 +53,8 @@ NameVirtualHost *:80
         Allow from all
     </Directory>
 </VirtualHost>
-
 ```
+
 
 * 新增 host
 
