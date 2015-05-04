@@ -34,10 +34,10 @@
 
 ## httpd-vhosts.conf
 
-1. 基本設定
+* 基本設定
 
 
-```
+	```
 NameVirtualHost *:80
 
 <VirtualHost *:80>
@@ -57,7 +57,7 @@ NameVirtualHost *:80
 
 ```
 
-2. 新增 host
+* 新增 host
 
 	```
 <VirtualHost *:80>
