@@ -31,3 +31,6 @@
 4. 載入使用，`sudo a2ensite my.conf`
 5. 重新啟動 apache，`sudo service apache2 restart`
 
+### rewrite 開啟
+1. 執行指令 `sudo a2enmod rewrite`
+5. 重新啟動 apache，`sudo service apache2 restart`
