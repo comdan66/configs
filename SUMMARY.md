@@ -8,6 +8,7 @@
 * [Server 筆記](mds/server.md)
 	* [Mac Server 筆記](mds/server/mac.md)
 		* [Apache](mds/server/mac/apache.md)
+		* [MySQL](mds/server/mac/mysql.md)
 	* [EC2 Ubuntu Server 筆記](mds/server/ec2-ubuntu.md)
 		* [Apache](mds/server/ec2-ubuntu/apache.md)
 		* [MySQL](mds/server/ec2-ubuntu/mysql.md)
