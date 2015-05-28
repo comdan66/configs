@@ -8,7 +8,7 @@ var gulp       = require ('gulp'),
 
 gulp.task ('minify', function () {
   gulp.run ('js-uglify');
-  gulp.run ('minify-html');
+  // gulp.run ('minify-html');
 });
 gulp.task ('js-uglify', function () {
   gulp.src ('./root/book/**/*.js')
