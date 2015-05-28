@@ -7,15 +7,8 @@ var gulp       = require ('gulp'),
 // ===================================================
 
 gulp.task ('minify', function () {
-  console.info ('\n== Start minify.. =================================================\n');
-
-  console.info ('\n== Run js-uglify.. ================================================\n');
   gulp.run ('js-uglify');
-
-  console.info ('\n== Run minify-html.. ==============================================\n');
   gulp.run ('minify-html');
-
-  console.info ('\n== Finish minify! =================================================\n');
 });
 gulp.task ('js-uglify', function () {
   gulp.src ('./root/book/**/*.js')
@@ -31,7 +24,5 @@ gulp.task ('minify-html', function () {
 // ===================================================
 
 gulp.task ('gh-pages', function () {
-  console.info ('\n== Start gh-pages.. ===============================================\n');
   del (['./root']);
-  console.info ('\n== Finish gh-pages! ===============================================\n');
 });
