@@ -13,4 +13,4 @@
 * 開啟外部連接權限，修改 `/etc/mysql/my.cnf`，改 `bind-address` 值為 `0.0.0.0`(任何地方)
 * 重新啟動 MySQL，`sudo service mysql restart`
 
-> 參考 [https://kylegoslin.wordpress.com/2012/05/18/109/](https://kylegoslin.wordpress.com/2012/05/18/109/)
+	> 參考 [https://kylegoslin.wordpress.com/2012/05/18/109/](https://kylegoslin.wordpress.com/2012/05/18/109/)

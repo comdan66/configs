@@ -12,4 +12,4 @@
   {"keys": ["super+alt+shift+right"], "command": "move_tab", "args": { "position": "+1" }}
 ```
 
-> 以上參考 [SublimeText/MoveTab](https://github.com/SublimeText/MoveTab)
+	> 以上參考 [SublimeText/MoveTab](https://github.com/SublimeText/MoveTab)

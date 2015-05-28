@@ -1,6 +1,6 @@
 # iTerm2 常用設定
 
-## preferences
+## Preference
 
 * 路徑 `preferences...`，或按 `command + ,`
 

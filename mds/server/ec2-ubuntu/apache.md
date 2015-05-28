@@ -6,9 +6,9 @@
 ## 驗證是否安裝成功
 * 安裝完後便可以開啟瀏覽器並且輸入網址 `http://127.0.0.1` 後，看是否便可以瀏覽
 
-> 至 `/etc/apache2/sites-available` 查詢 **DocumentRoot**
-> 
-> ※ 預設 Apache 的根目錄為 `/var/www/html`，將其更改為你所需要的位置。
+	> 至 `/etc/apache2/sites-available` 查詢 **DocumentRoot**
+	> 
+	> ※ 預設 Apache 的根目錄為 `/var/www/html`，將其更改為你所需要的位置。
 
 ## 設定 apache2.conf
 * 路徑 `/etc/apache2/apache2.conf`
