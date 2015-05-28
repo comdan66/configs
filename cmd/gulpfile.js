@@ -23,7 +23,7 @@ gulp.task ('js-uglify', function () {
       .pipe (gulp.dest ('./root/js/'));
 });
 gulp.task ('minify-html', function () {
-  gulp.src ('./root/book/*.html')
+  gulp.src ('./root/book/**/*.html')
       .pipe (htmlmin ({collapseWhitespace: true}))
       .pipe (gulp.dest ('./root/'));
 });
