@@ -41,7 +41,6 @@
 
 	```
 NameVirtualHost *:80  
-
 <VirtualHost *:80>
     ServerAdmin comdan66@gmail.com
     DocumentRoot "/Users/OA/www"
