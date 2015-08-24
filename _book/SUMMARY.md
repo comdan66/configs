@@ -11,6 +11,7 @@
 		* [Apache](mds/server/mac/apache.md)
 		* [MySQL](mds/server/mac/mysql.md)
 		* [Ruby on Rails](mds/server/mac/ror.md)
+		* [Elastic Search](mds/server/mac/elasticsearch.md)
 	* [EC2 Ubuntu Server 筆記](mds/server/ec2-ubuntu.md)
 		* [Apache](mds/server/ec2-ubuntu/apache.md)
 		* [MySQL](mds/server/ec2-ubuntu/mysql.md)
