@@ -16,3 +16,4 @@
 		* [Apache](mds/server/ec2-ubuntu/apache.md)
 		* [MySQL](mds/server/ec2-ubuntu/mysql.md)
 		* [PHP](mds/server/ec2-ubuntu/php.md)
+		* [Elastic Search](mds/server/ec2-ubuntu/elasticsearch.md)
