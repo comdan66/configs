@@ -24,7 +24,7 @@
 	{!! Form::close(); !!}
 ```
 
-	> 如有錯誤不能使用 form 的話，請查閱 [此章節](mds/laraval/crud.md) 的**加入 From、html 套件**，檢查是否有加入。
+	> 如有錯誤不能使用 form 的話，請查閱 [此章節](../crud.md) 的**加入 From、html 套件**，檢查是否有加入。
 
 ## post method
 * 編輯 `/app/Http/Controllers/ArticlesController.php` 下的 store method，依步驟作**表單驗證**、**新增資料**、**設定 flash_message**、**導頁**

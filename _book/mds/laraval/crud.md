@@ -112,11 +112,11 @@
 ```
 
 ## 開始編輯
-* [Articles Controller](mds/laraval/crud/step1.md)
-* [Create page](mds/laraval/crud/step2.md)
-* [Read page](mds/laraval/crud/step3.md)
-* [Update page](mds/laraval/crud/step4.md)
-* [Delete page](mds/laraval/crud/step5.md)
+* [Articles Controller](crud/step1.md)
+* [Create page](crud/step2.md)
+* [Read page](crud/step3.md)
+* [Update page](crud/step4.md)
+* [Delete page](crud/step5.md)
 
 ---
 

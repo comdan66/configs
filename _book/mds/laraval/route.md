@@ -19,7 +19,7 @@
 	```
 
 ## 普通 RESTful
-* 以 [articles](mds/laraval/crud.md) 為範例，設定如下：
+* 以 [articles](crud.md) 為範例，設定如下：
 
 	```
 	Route::resource('articles', 'ArticlesController');
