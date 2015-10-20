@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>Elastic Search | OA&#39;s 常用設定</title>
+        <title>Create page | OA&#39;s 常用設定</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.0.1">
@@ -20,8 +20,10 @@
         
     
     
+    <link rel="next" href="../../../mds/laraval/crud/step3.html" />
     
-    <link rel="prev" href="../../../mds/server/ec2-ubuntu/php.html" />
+    
+    <link rel="prev" href="../../../mds/laraval/crud/step1.html" />
     
 
         
@@ -34,7 +36,7 @@
     
 
         
-    <div class="book" data-level="6.2.4" data-basepath="../../.." data-revision="Tue Oct 20 2015 23:31:55 GMT+0800 (CST)">
+    <div class="book" data-level="1.2.2" data-basepath="../../.." data-revision="Tue Oct 20 2015 23:31:55 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -126,7 +128,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="mds/laraval/crud/step2.html">
+        <li class="chapter active" data-level="1.2.2" data-path="mds/laraval/crud/step2.html">
             
                 
                     <a href="../../../mds/laraval/crud/step2.html">
@@ -450,7 +452,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="6.2.4" data-path="mds/server/ec2-ubuntu/elasticsearch.html">
+        <li class="chapter " data-level="6.2.4" data-path="mds/server/ec2-ubuntu/elasticsearch.html">
             
                 
                     <a href="../../../mds/server/ec2-ubuntu/elasticsearch.html">
@@ -578,40 +580,69 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="mac-elasticsearch-%E7%AD%86%E8%A8%98">Mac Elasticsearch &#x7B46;&#x8A18;</h1>
-<h3 id="install-elasticsearch">Install ElasticSearch</h3>
-<ol>
-<li><code>sudo apt-get install openjdk-7-jre-headless -y</code></li>
-<li><code>sudo wget -O - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo apt-key add -</code></li>
-<li>&#x7DE8;&#x8F2F; <code>/etc/apt/sources.list</code></li>
-<li>&#x52A0;&#x5165; <code>deb http://packages.elasticsearch.org/elasticsearch/1.3/debian stable main</code></li>
-<li><code>sudo apt-get update</code></li>
-<li><code>sudo apt-get install elasticsearch</code></li>
-<li><code>sudo update-rc.d elasticsearch defaults 95 10</code></li>
-</ol>
-<h3 id="%E9%96%8B%E9%97%9C">&#x958B;&#x95DC;</h3>
+                        <h1 id="create-page">Create page</h1>
+<h2 id="view">view</h2>
 <ul>
-<li>&#x958B;&#xFF0C;<code>sudo /etc/init.d/elasticsearch start</code></li>
-<li>&#x95DC;&#xFF0C;<code>udo /etc/init.d/elasticsearch stop</code></li>
+<li><p>&#x4FEE;&#x6539; <code>/app/Http/Controllers/ArticlesController.php</code> &#x4E0B;&#x7684; create method&#xFF0C;&#x4E26;&#x4E14;&#x5C0E;&#x5165; articles.create &#x6A23;&#x677F;</p>
+<pre><code>  public function create()
+  {
+      return view(&apos;articles.create&apos;);
+  }
+</code></pre></li>
+<li><p>views &#x8CC7;&#x6599;&#x593E; <code>/resources/views/articles/</code> &#x65B0;&#x589E; <code>create.blade.php</code>&#xFF0C;&#x65B0;&#x589E; form &#x8868;&#x55AE;</p>
+<pre><code>  {!! Form::model(null, [&apos;route&apos; =&gt; [&apos;articles.store&apos;]]); !!}
+      {!! Form::label(&apos;title&apos;, &apos;&#x6A19;&#x984C;&apos;); !!}
+      {!! Form::text(&apos;title&apos;, null, [&apos;placeholder=&quot;&#x8ACB;&#x8F38;&#x5165;&#x540D;&#x7A31;..&quot;&apos;]); !!}
+      &lt;br/&gt;
+      {!! Form::label(&apos;content&apos;, &apos;&#x5167;&#x5BB9;&apos;); !!}
+      {!! Form::textarea(&apos;content&apos;, null, [&apos;placeholder=&quot;&#x8ACB;&#x8F38;&#x5165;&#x5167;&#x5BB9;..&quot;&apos;]); !!}
+      &lt;hr/&gt;
+      {!! Form::submit(&apos;&#x9001;&#x51FA;&apos;, array (&apos;class=&quot;btn btn-default&quot;&apos;)); !!}
+  {!! Form::close(); !!}
+</code></pre><blockquote>
+<p>&#x5982;&#x6709;&#x932F;&#x8AA4;&#x4E0D;&#x80FD;&#x4F7F;&#x7528; form &#x7684;&#x8A71;&#xFF0C;&#x8ACB;&#x67E5;&#x95B1; <a href="mds/laraval/crud.md">&#x6B64;&#x7AE0;&#x7BC0;</a> &#x7684;<strong>&#x52A0;&#x5165; From&#x3001;html &#x5957;&#x4EF6;</strong>&#xFF0C;&#x6AA2;&#x67E5;&#x662F;&#x5426;&#x6709;&#x52A0;&#x5165;&#x3002;</p>
+</blockquote>
+</li>
 </ul>
-<blockquote>
-<p>&#x4E5F;&#x53EF;&#x4EE5;&#x7528; <code>sudo service elasticsearch start</code> &#x958B;&#x555F;&#xFF0C;&#x95DC;&#x9589;&#x5247;&#x662F; <code>sudo service elasticsearch stop</code></p>
-<p>&#x4EE5;&#x4E0A;&#x53C3;&#x8003; <a href="http://blog.bekijkhet.com/2014/06/install-elasticsearch-in-ubuntu-1404.html" target="_blank">http://blog.bekijkhet.com/2014/06/install-elasticsearch-in-ubuntu-1404.html</a></p>
+<h2 id="post-method">post method</h2>
+<ul>
+<li><p>&#x7DE8;&#x8F2F; <code>/app/Http/Controllers/ArticlesController.php</code> &#x4E0B;&#x7684; store method&#xFF0C;&#x4F9D;&#x6B65;&#x9A5F;&#x4F5C;<strong>&#x8868;&#x55AE;&#x9A57;&#x8B49;</strong>&#x3001;<strong>&#x65B0;&#x589E;&#x8CC7;&#x6599;</strong>&#x3001;<strong>&#x8A2D;&#x5B9A; flash_message</strong>&#x3001;<strong>&#x5C0E;&#x9801;</strong></p>
+<pre><code>  public function store(Request $request)
+  {
+      $this-&gt;validate($request, [
+          &apos;title&apos; =&gt; &apos;required|max:255&apos;,
+          &apos;content&apos; =&gt; &apos;required&apos;,
+      ]);
+
+      $input = $request-&gt;all();
+      Article::create($input);
+
+      Session::flash(&apos;flash_message&apos;, &apos;&#x6587;&#x7AE0;&#x65B0;&#x589E;&#x6210;&#x529F;&#xFF01;&apos;);
+
+      return redirect()-&gt;route (&apos;articles.index&apos;);
+  }
+</code></pre></li>
+<li><p>&#x4F7F;&#x7528; flash_message &#x5FC5;&#x9808;&#x8981;&#x52A0;&#x5165;&#x4F7F;&#x7528; Session&#xFF0C;&#x6240;&#x4EE5;&#x65BC;  <code>/app/Http/Controllers/ArticlesController.php</code> &#x958B;&#x982D;&#x52A0;&#x5165; <code>use Session;</code></p>
+</li>
+<li><p>&#x56E0;&#x70BA; <code>$input = $request-&gt;all()</code> &#x6703;&#x5C07;&#x6240;&#x6709; POST &#x8B8A;&#x6578;&#x90FD;&#x53D6;&#x51FA;&#x4F86;&#xFF0C;&#x6240;&#x4EE5;&#x7576; <code>Article::create($input);</code> &#x6642;&#x6703;&#x767C;&#x751F;&#x932F;&#x8AA4;&#xFF0C;&#x6545;&#x9700;&#x7DE8;&#x8F2F; Model <code>/App/Article.php</code> &#x52A0;&#x5165;&#x53EF;&#x586B;&#x5BEB;&#x689D;&#x4EF6;</p>
+<pre><code>  protected $fillable = [
+      &apos;title&apos;,
+      &apos;content&apos;
+  ];
+</code></pre></li>
+<li><p>&#x82E5;&#x662F;&#x8868;&#x55AE;&#x9A57;&#x8B49;&#x5931;&#x6557;&#xFF0C;&#x5247;&#x6703;&#x56DE;&#x5230; create &#x9801;&#x9762;&#xFF0C;&#x4E26;&#x4E14;&#x591A;&#x4E00;&#x500B;&#x8B8A;&#x6578;<strong>&#x63D0;&#x793A;&#x932F;&#x8AA4;</strong>&#xFF0C;&#x6545;&#x5728; <code>/resources/views/articles/articles.create.php</code> &#x52A0;&#x5165;&#x63D0;&#x793A;&#x932F;&#x8AA4;</p>
+<pre><code>  @if($errors-&gt;any())
+      &lt;ul&gt;
+          @foreach($errors-&gt;all() as $error)
+              &lt;li&gt;{{ $error }}&lt;/li&gt;
+          @endforeach
+      &lt;/ul&gt;
+  @endif
+</code></pre><blockquote>
+<p>&#x932F;&#x8AA4;&#x8A0A;&#x606F;&#x53EF;&#x5728; <code>/resources/lang/</code> &#x4E0B;&#xFF0C;&#x4F9D;&#x4E0D;&#x540C;&#x8A9E;&#x7CFB;&#x505A;&#x4FEE;&#x6539;&#xFF0C;&#x8A9E;&#x7CFB;&#x8A2D;&#x5B9A;&#x53EF;&#x4EE5;&#x4FEE;&#x6539; <code>/config/app.php</code> &#x5167;&#x7684; <strong>locale</strong>&#x3001;<strong>fallback_locale</strong></p>
 </blockquote>
-<h3 id="install-plugin">Install Plugin</h3>
-<ol>
-<li><code>cd /usr/share/elasticsearch</code></li>
-<li>&#x53D6;&#x5F97; Plugins: <code>sudo bin/plugin --install ..</code></li>
-</ol>
-<h4 id="example">Example</h4>
-<ol>
-<li><code>cd /usr/share/elasticsearch</code></li>
-<li><code>sudo bin/plugin --install mobz/elasticsearch-head</code></li>
-<li>&#x958B;&#x555F;&#x700F;&#x89BD;&#x5668;&#xFF1A;<a href="http://domain:9200/_plugin/head/" target="_blank">http://domain:9200/_plugin/head/</a></li>
-</ol>
-<blockquote>
-<p>&#x4EE5;&#x4E0A;&#x53C3;&#x8003; <a href="https://gist.github.com/ondrej-kvasnovsky/9363975" target="_blank">https://gist.github.com/ondrej-kvasnovsky/9363975</a></p>
-</blockquote>
+</li>
+</ul>
 
                     
                     </section>
@@ -622,8 +653,10 @@
         </div>
 
         
-        <a href="../../../mds/server/ec2-ubuntu/php.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: PHP"><i class="fa fa-angle-left"></i></a>
+        <a href="../../../mds/laraval/crud/step1.html" class="navigation navigation-prev " aria-label="Previous page: Articles Controller"><i class="fa fa-angle-left"></i></a>
         
+        
+        <a href="../../../mds/laraval/crud/step3.html" class="navigation navigation-next " aria-label="Next page: Read page"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

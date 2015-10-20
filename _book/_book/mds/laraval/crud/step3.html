@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>Elastic Search | OA&#39;s 常用設定</title>
+        <title>Read page | OA&#39;s 常用設定</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.0.1">
@@ -20,8 +20,10 @@
         
     
     
+    <link rel="next" href="../../../mds/laraval/crud/step4.html" />
     
-    <link rel="prev" href="../../../mds/server/ec2-ubuntu/php.html" />
+    
+    <link rel="prev" href="../../../mds/laraval/crud/step2.html" />
     
 
         
@@ -34,7 +36,7 @@
     
 
         
-    <div class="book" data-level="6.2.4" data-basepath="../../.." data-revision="Tue Oct 20 2015 23:31:55 GMT+0800 (CST)">
+    <div class="book" data-level="1.2.3" data-basepath="../../.." data-revision="Tue Oct 20 2015 23:31:55 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -141,7 +143,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="mds/laraval/crud/step3.html">
+        <li class="chapter active" data-level="1.2.3" data-path="mds/laraval/crud/step3.html">
             
                 
                     <a href="../../../mds/laraval/crud/step3.html">
@@ -450,7 +452,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="6.2.4" data-path="mds/server/ec2-ubuntu/elasticsearch.html">
+        <li class="chapter " data-level="6.2.4" data-path="mds/server/ec2-ubuntu/elasticsearch.html">
             
                 
                     <a href="../../../mds/server/ec2-ubuntu/elasticsearch.html">
@@ -578,40 +580,74 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="mac-elasticsearch-%E7%AD%86%E8%A8%98">Mac Elasticsearch &#x7B46;&#x8A18;</h1>
-<h3 id="install-elasticsearch">Install ElasticSearch</h3>
-<ol>
-<li><code>sudo apt-get install openjdk-7-jre-headless -y</code></li>
-<li><code>sudo wget -O - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo apt-key add -</code></li>
-<li>&#x7DE8;&#x8F2F; <code>/etc/apt/sources.list</code></li>
-<li>&#x52A0;&#x5165; <code>deb http://packages.elasticsearch.org/elasticsearch/1.3/debian stable main</code></li>
-<li><code>sudo apt-get update</code></li>
-<li><code>sudo apt-get install elasticsearch</code></li>
-<li><code>sudo update-rc.d elasticsearch defaults 95 10</code></li>
-</ol>
-<h3 id="%E9%96%8B%E9%97%9C">&#x958B;&#x95DC;</h3>
+                        <h1 id="read-page">Read page</h1>
+<h2 id="list-page">list page</h2>
 <ul>
-<li>&#x958B;&#xFF0C;<code>sudo /etc/init.d/elasticsearch start</code></li>
-<li>&#x95DC;&#xFF0C;<code>udo /etc/init.d/elasticsearch stop</code></li>
+<li><p>&#x56E0;&#x70BA;&#x9700;&#x8981;&#x986F;&#x793A; flash_message &#x6240;&#x4EE5;&#x7DE8;&#x8F2F; <code>/resources/views/articles/articles.index.php</code>&#xFF0C;&#x52A0;&#x5165;&#x986F;&#x793A; flash_message</p>
+<pre><code>  @if(Session::has(&apos;flash_message&apos;))
+      {{ Session::get(&quot;flash_message&quot;) }}
+  @endif
+</code></pre></li>
+<li><p>&#x5217;&#x51FA;&#x6240;&#x6709;&#x6587;&#x7AE0;&#x529F;&#x80FD;&#xFF0C;&#x7DE8;&#x8F2F; <code>/resources/views/articles/articles.index.php</code> &#x4E26;&#x4EE5;&#x8FF4;&#x5708;&#x65B9;&#x5F0F;&#x986F;&#x793A;&#x51FA;&#x4F86;</p>
+<pre><code>  &lt;table&gt;
+      &lt;thead&gt;
+          &lt;tr&gt;
+              &lt;th&gt;#&lt;/th&gt;
+              &lt;th&gt;&#x6A19;&#x984C;&lt;/th&gt;
+              &lt;th&gt;&#x5167;&#x5BB9;&lt;/th&gt;
+          &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+          @if ($articles-&gt;count ())
+              @foreach ($articles as $article)
+                  &lt;tr&gt;
+                      &lt;td&gt;{{ $article-&gt;id }}&lt;/td&gt;
+                      &lt;td&gt;{{ $article-&gt;title }}&lt;/td&gt;
+                      &lt;td&gt;{{ $article-&gt;content }}&lt;/td&gt;
+                  &lt;/tr&gt;
+              @endforeach
+          @else
+              &lt;tr&gt;
+                  &lt;td colspan=&apos;3&apos;&gt;&#x6C92;&#x6709;&#x8CC7;&#x6599;&#xFF01;&lt;/td&gt;
+              &lt;/tr&gt;
+          @endif
+      &lt;/tbody&gt;
+  &lt;/table&gt;
+</code></pre></li>
 </ul>
-<blockquote>
-<p>&#x4E5F;&#x53EF;&#x4EE5;&#x7528; <code>sudo service elasticsearch start</code> &#x958B;&#x555F;&#xFF0C;&#x95DC;&#x9589;&#x5247;&#x662F; <code>sudo service elasticsearch stop</code></p>
-<p>&#x4EE5;&#x4E0A;&#x53C3;&#x8003; <a href="http://blog.bekijkhet.com/2014/06/install-elasticsearch-in-ubuntu-1404.html" target="_blank">http://blog.bekijkhet.com/2014/06/install-elasticsearch-in-ubuntu-1404.html</a></p>
-</blockquote>
-<h3 id="install-plugin">Install Plugin</h3>
-<ol>
-<li><code>cd /usr/share/elasticsearch</code></li>
-<li>&#x53D6;&#x5F97; Plugins: <code>sudo bin/plugin --install ..</code></li>
-</ol>
-<h4 id="example">Example</h4>
-<ol>
-<li><code>cd /usr/share/elasticsearch</code></li>
-<li><code>sudo bin/plugin --install mobz/elasticsearch-head</code></li>
-<li>&#x958B;&#x555F;&#x700F;&#x89BD;&#x5668;&#xFF1A;<a href="http://domain:9200/_plugin/head/" target="_blank">http://domain:9200/_plugin/head/</a></li>
-</ol>
-<blockquote>
-<p>&#x4EE5;&#x4E0A;&#x53C3;&#x8003; <a href="https://gist.github.com/ondrej-kvasnovsky/9363975" target="_blank">https://gist.github.com/ondrej-kvasnovsky/9363975</a></p>
-</blockquote>
+<h2 id="show-page">show page</h2>
+<ul>
+<li><p>&#x6AA2;&#x8996;&#x8A73;&#x7D30;&#x9801;&#x9762;&#xFF0C;&#x5728; <code>/resources/views/articles/articles.index.php</code> &#x7684; table &#x5167;&#x52A0;&#x5165;&#x7D30;&#x7BC0;&#x9023;&#x7D50;</p>
+<pre><code>  // ...
+  &lt;th&gt;&#x7D30;&#x7BC0;&lt;/th&gt;
+  // ...
+  &lt;td&gt;
+      {!! link_to_route(&apos;articles.show&apos;, &apos;&#x7D30;&#x7BC0;&apos;, $article) !!}
+  &lt;/td&gt;
+  // ...
+</code></pre></li>
+<li><p>&#x7DE8;&#x8F2F; <code>/app/Http/Controllers/ArticlesController.php</code> &#x4E0B;&#x7684; show method&#xFF0C;&#x53D6;&#x51FA;&#x8A72;&#x7B46;&#x8CC7;&#x6599;&#x4E26;&#x4E14; Render view</p>
+<pre><code>  public function show($id)
+  {
+      $article = Article::findOrFail($id);
+      return view(&apos;articles.show&apos;)-&gt;with(&apos;article&apos;, $article);
+  }
+</code></pre></li>
+<li><p>views &#x8CC7;&#x6599;&#x593E; <code>/resources/views/articles/</code> &#x65B0;&#x589E; <code>show.blade.php</code> &#x986F;&#x793A;&#x8A73;&#x7D30;&#x8CC7;&#x6599;</p>
+<pre><code>  &lt;article&gt;
+      &lt;h1&gt;{{ $article-&gt;title }}&lt;/h1&gt;
+      &lt;hr/&gt;
+      &lt;section&gt;
+          {{ $article-&gt;content }}
+          &lt;hr/&gt;
+          &lt;div&gt;&#x66F4;&#x65B0;&#x6642;&#x9593;&#xFF1A;{{ $article-&gt;updated_at }}&lt;/div&gt;
+          &lt;div&gt;&#x65B0;&#x589E;&#x6642;&#x9593;&#xFF1A;{{ $article-&gt;created_at }}&lt;/div&gt;
+      &lt;/section&gt;
+  &lt;/article&gt;
+  &lt;hr/&gt;
+  {!! link_to_route(&apos;articles.index&apos;, &apos;&#x5217;&#x8868;&apos;) !!}
+</code></pre></li>
+</ul>
 
                     
                     </section>
@@ -622,8 +658,10 @@
         </div>
 
         
-        <a href="../../../mds/server/ec2-ubuntu/php.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: PHP"><i class="fa fa-angle-left"></i></a>
+        <a href="../../../mds/laraval/crud/step2.html" class="navigation navigation-prev " aria-label="Previous page: Create page"><i class="fa fa-angle-left"></i></a>
         
+        
+        <a href="../../../mds/laraval/crud/step4.html" class="navigation navigation-next " aria-label="Next page: Update page"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
