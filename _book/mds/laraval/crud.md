@@ -15,7 +15,17 @@
 * browser `article.ioa.tw`
 
 ## 環境變數
-* 修改 `/.env` 資料庫連線方式
+* 修改 `/.env` 資料庫連線方式，分別填入**連線方式**、**資料庫名稱**、**使用者**、**密碼**
+
+	```
+	DB_HOST=
+	DB_DATABASE=
+	DB_USERNAME=
+	DB_PASSWORD=
+```
+
+## 資料庫
+* 新增一個資料庫
 
 ## 新增 migration
 * 新增一筆 migration `php artisan make:migration create_articles_table`
@@ -107,6 +117,10 @@
 * [Read page](mds/laraval/crud/step3.md)
 * [Update page](mds/laraval/crud/step4.md)
 * [Delete page](mds/laraval/crud/step5.md)
+
+---
+
+程式碼範例：[OA's practice laravel5 CRUD](https://github.com/comdan66/practice_laravel5/tree/Base_CRUD)
 
 ---
 
