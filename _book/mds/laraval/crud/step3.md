@@ -1,7 +1,7 @@
-# Read page
+# Read Article
 
 ## list page
-* 因為需要顯示 flash_message 所以編輯 `/resources/views/articles/articles.index.php`，加入顯示 flash_message
+* 因為需要顯示 flash_message 所以編輯 `/resources/views/articles/index.blade.php`，加入顯示 flash_message
 
 	```
 	@if(Session::has('flash_message'))
@@ -9,7 +9,7 @@
 	@endif
 ```
 
-* 列出所有文章功能，編輯 `/resources/views/articles/articles.index.php` 並以迴圈方式顯示出來
+* 列出所有文章功能，編輯 `/resources/views/articles/index.blade.php` 並以迴圈方式顯示出來
 
 	```
 	<table>
@@ -39,7 +39,7 @@
 ```
 
 ## show page
-* 檢視詳細頁面，在 `/resources/views/articles/articles.index.php` 的 table 內加入細節連結
+* 檢視詳細頁面，在 `/resources/views/articles/index.blade.php` 的 table 內加入細節連結
 
 	```
 	// ...

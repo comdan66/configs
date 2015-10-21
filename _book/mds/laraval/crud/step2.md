@@ -1,4 +1,4 @@
-# Create page
+# Create Article
 
 ## view
 * 修改 `/app/Http/Controllers/ArticlesController.php` 下的 create method，並且導入 articles.create 樣板
@@ -20,7 +20,7 @@
 		{!! Form::label('content', '內容'); !!}
 		{!! Form::textarea('content', null, ['placeholder="請輸入內容.."']); !!}
 		<hr/>
-		{!! Form::submit('送出', array ('class="btn btn-default"')); !!}
+		{!! Form::submit('送出'); !!}
 	{!! Form::close(); !!}
 ```
 
@@ -57,7 +57,7 @@
 	];
 ```
 
-* 若是表單驗證失敗，則會回到 create 頁面，並且多一個變數**提示錯誤**，故在 `/resources/views/articles/articles.create.php` 加入提示錯誤
+* 若是表單驗證失敗，則會回到 create 頁面，並且多一個變數**提示錯誤**，故在 `/resources/views/articles/create.blade.php` 加入提示錯誤
 
 	```
 	@if($errors->any())

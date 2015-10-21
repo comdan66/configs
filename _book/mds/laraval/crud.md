@@ -73,8 +73,8 @@
 | POST   | /articles                   | create post | articles.store |
 | GET    |	 /articles/{article id}      | show        | articles.show |
 | GET    | /articles/{article id}/edit | edit        | articles.edit |
-| PUT    | /articles/{article id}      | edit pos    | article.update |
-| DELETE | /articles/{article id}      | destroy     | article.destroy |
+| PUT    | /articles/{article id}      | edit post   | articles.update |
+| DELETE | /articles/{article id}      | destroy     | articles.destroy |
 
 
 ## 加入 From、html 套件
@@ -113,10 +113,10 @@
 
 ## 開始編輯
 * [Articles Controller](crud/step1.md)
-* [Create page](crud/step2.md)
-* [Read page](crud/step3.md)
-* [Update page](crud/step4.md)
-* [Delete page](crud/step5.md)
+* [Create Article](crud/step2.md)
+* [Read Article](crud/step3.md)
+* [Update Article](crud/step4.md)
+* [Delete Article](crud/step5.md)
 
 ---
 

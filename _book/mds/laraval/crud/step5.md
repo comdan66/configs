@@ -1,7 +1,7 @@
-# Delete page
+# Delete Article
 
 ## view
-* 加入刪除連結，在 `/resources/views/articles/articles.index.php` 的 table 內加入刪除連結
+* 加入刪除連結，在 `/resources/views/articles/index.blade.php` 的 table 內加入刪除連結
 
 	```
 	// ...

@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>Update page | OA&#39;s 常用設定</title>
+        <title>Update Article | OA&#39;s 常用設定</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.0.1">
@@ -36,7 +36,7 @@
     
 
         
-    <div class="book" data-level="1.2.4" data-basepath="../../.." data-revision="Tue Oct 20 2015 23:56:40 GMT+0800 (CST)">
+    <div class="book" data-level="1.2.4" data-basepath="../../.." data-revision="Wed Oct 21 2015 14:00:08 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -136,7 +136,7 @@
                         
                             <b>1.2.2.</b>
                         
-                        Create page
+                        Create Article
                     </a>
                 
             
@@ -151,7 +151,7 @@
                         
                             <b>1.2.3.</b>
                         
-                        Read page
+                        Read Article
                     </a>
                 
             
@@ -166,7 +166,7 @@
                         
                             <b>1.2.4.</b>
                         
-                        Update page
+                        Update Article
                     </a>
                 
             
@@ -181,7 +181,103 @@
                         
                             <b>1.2.5.</b>
                         
-                        Delete page
+                        Delete Article
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="mds/laraval/nested_crud.html">
+            
+                
+                    <a href="../../../mds/laraval/nested_crud.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        巢狀 CRUD(nested)
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="mds/laraval/nested_crud/step1.html">
+            
+                
+                    <a href="../../../mds/laraval/nested_crud/step1.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.1.</b>
+                        
+                        Comments Controller
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="mds/laraval/nested_crud/step2.html">
+            
+                
+                    <a href="../../../mds/laraval/nested_crud/step2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.2.</b>
+                        
+                        Create Comment
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="mds/laraval/nested_crud/step3.html">
+            
+                
+                    <a href="../../../mds/laraval/nested_crud/step3.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.3.</b>
+                        
+                        Read Comment
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="mds/laraval/nested_crud/step4.html">
+            
+                
+                    <a href="../../../mds/laraval/nested_crud/step4.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.4.</b>
+                        
+                        Update Comment
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="mds/laraval/nested_crud/step5.html">
+            
+                
+                    <a href="../../../mds/laraval/nested_crud/step5.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.5.</b>
+                        
+                        Delete Comment
                     </a>
                 
             
@@ -580,10 +676,10 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="update-page">Update page</h1>
+                        <h1 id="update-article">Update Article</h1>
 <h2 id="view">view</h2>
 <ul>
-<li><p>&#x52A0;&#x5165;&#x7DE8;&#x8F2F;&#x9023;&#x7D50;&#xFF0C;&#x5728; <code>/resources/views/articles/articles.index.php</code> &#x7684; table &#x5167;&#x52A0;&#x5165;&#x7DE8;&#x8F2F;&#x9023;&#x7D50;</p>
+<li><p>&#x52A0;&#x5165;&#x7DE8;&#x8F2F;&#x9023;&#x7D50;&#xFF0C;&#x5728; <code>/resources/views/articles/index.blade.php</code> &#x7684; table &#x5167;&#x52A0;&#x5165;&#x7DE8;&#x8F2F;&#x9023;&#x7D50;</p>
 <pre><code>  // ...
   &lt;th&gt;&#x7DE8;&#x8F2F;&lt;/th&gt;
   // ...
@@ -608,14 +704,14 @@
       &lt;/ul&gt;
   @endif
 
-  {!! Form::model($article, array(&apos;method&apos; =&gt; &apos;PUT&apos;, &apos;route&apos; =&gt; array(&apos;articles.update&apos;, $article))) !!}
+  {!! Form::model($article, [&apos;method&apos; =&gt; &apos;PUT&apos;, &apos;route&apos; =&gt; [&apos;articles.update&apos;, $article]]) !!}
       {!! Form::label(&apos;title&apos;, &apos;&#x6A19;&#x984C;&apos;); !!}
       {!! Form::text(&apos;title&apos;, null, [&apos;placeholder=&quot;&#x8ACB;&#x8F38;&#x5165;&#x540D;&#x7A31;..&quot;&apos;]); !!}
       &lt;br/&gt;
       {!! Form::label(&apos;content&apos;, &apos;&#x5167;&#x5BB9;&apos;); !!}
       {!! Form::textarea(&apos;content&apos;, null, [&apos;placeholder=&quot;&#x8ACB;&#x8F38;&#x5165;&#x5167;&#x5BB9;..&quot;&apos;]); !!}
       &lt;hr/&gt;
-      {!! Form::submit(&apos;&#x9001;&#x51FA;&apos;, array (&apos;class=&quot;btn btn-default&quot;&apos;)); !!}
+      {!! Form::submit(&apos;&#x9001;&#x51FA;&apos;); !!}
   {!! Form::close(); !!}
 </code></pre><blockquote>
 <p>&#x5982; <a href="mds/laraval/crud/step2.md">Create page</a> &#x6709;&#x63D0;&#x5230;&#x7684;<strong>&#x8868;&#x55AE;&#x9A57;&#x8B49;</strong>&#x6642;&#x7528;&#x5230;&#x7684; <strong>errors</strong>&#xFF0C;&#x6240;&#x4EE5;&#x52A0;&#x5165; <code>@if($errors-&gt;any())</code> &#x8A72;&#x6BB5;&#x7A0B;&#x5F0F;</p>
@@ -654,10 +750,10 @@
         </div>
 
         
-        <a href="../../../mds/laraval/crud/step3.html" class="navigation navigation-prev " aria-label="Previous page: Read page"><i class="fa fa-angle-left"></i></a>
+        <a href="../../../mds/laraval/crud/step3.html" class="navigation navigation-prev " aria-label="Previous page: Read Article"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../../mds/laraval/crud/step5.html" class="navigation navigation-next " aria-label="Next page: Delete page"><i class="fa fa-angle-right"></i></a>
+        <a href="../../../mds/laraval/crud/step5.html" class="navigation navigation-next " aria-label="Next page: Delete Article"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

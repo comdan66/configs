@@ -4,6 +4,9 @@
 
 * 列出所有提示 `php artisan list`
 
+### middleware(中介層)
+* 新增 `php artisan make:middleware ArticleMiddleware`
+
 ### controller
 * 新增 controller `php artisan make:controller ArticlesController`
 
