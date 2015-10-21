@@ -67,4 +67,8 @@
 相關參考：
 
 * [Nested resources controllers structure](https://laracasts.com/discuss/channels/laravel/nested-resources-controllers-structure)
+* [Laravel Recipes :: Generating a Link to a Javascript File](http://laravel-recipes.com/recipes/183/generating-a-link-to-a-javascript-file)
+* [[SOLVED] Work around for Nested Forms - Laravel.io - The Laravel Community Portal](http://laravel.io/forum/03-04-2014-work-around-for-nested-forms)
+* [Pass parameters to middleware in Laravel 5](http://www.jeffmould.com/2015/04/22/pass-parameters-to-middleware-in-laravel-5/)
+* [Nested Routes in Laravel 4 - Treehouse Blog](http://blog.teamtreehouse.com/nested-routes-laravel-4)
 * [官方英文文件 - http://laravelcollective.com/docs/5.1/html](http://laravelcollective.com/docs/5.1/html)
