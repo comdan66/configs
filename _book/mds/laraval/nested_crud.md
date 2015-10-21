@@ -51,14 +51,16 @@
 | PUT    | /articles/{article id}/comments/{comment id}      | edit post    | articles.comments.update |
 | DELETE | /articles/{article id}/comments/{comment id}      | destroy     | articles.comments.destroy |
 
-
-
 ## 開始編輯
 * [Comments Controller](nested_crud/step1.md)
 * [Create Comment](nested_crud/step2.md)
 * [Read Comment](nested_crud/step3.md)
 * [Update Comment](nested_crud/step4.md)
 * [Delete Comment](nested_crud/step5.md)
+
+---
+
+程式碼範例：[OA's practice laravel5 Nested CRUD](https://github.com/comdan66/practice_laravel5/tree/Nested_CRUD)
 
 ---
 
