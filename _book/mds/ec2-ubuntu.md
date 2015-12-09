@@ -1,4 +1,4 @@
-# EC2 Ubuntu Server 筆記
+# EC2 Ubuntu OS 筆記
 * 版本 EC2 Ubuntu 14.04.2
 
 ## GIT

@@ -1,3 +1,4 @@
+gitbook serve _book -v 2.0.1
 
 === no npm installed
 
